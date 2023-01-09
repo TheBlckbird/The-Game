@@ -1,0 +1,122 @@
+SET x 0
+SET y 1
+
+SET goal_x 1
+SET goal_y 1
+//RAND goal_x 1 10
+//RAND goal_y 1 10
+
+SET action
+
+TO main
+
+
+// WAYPOINTS \\
+
+AT do_action
+    IF {{action}} == w t go_up
+    IF {{action}} == s t go_down
+    IF {{action}} == a t go_left
+    IF {{action}} == d t go_right
+    IF {{action}} == q t quit
+    
+    RET
+
+AT go_up
+    MATH y sub {{y}} 1
+    RET
+
+AT go_down
+    MATH y add {{y}} 1
+    RET
+
+AT go_left
+    MATH x sub {{x}} 1
+    RET
+
+AT go_right
+    MATH x add {{x}} 1
+    RET
+
+AT quit
+    OUT Goodbye!
+    EXIT
+
+AT victory
+    OUT You win!
+    set nothing
+    INPUT nothing Press enter to exit...
+    EXIT
+
+AT test_victory
+    //TO test_victory_x
+    RET
+
+AT test_victory_x
+    IF {{x}} == {{goal_x}} t test_victory_y
+    RET
+
+    AT test_victory_y
+        IF {{y}} == {{goal_y}} t victory
+
+    RET
+
+
+AT display
+    SET display_x 0
+    SET display_y 0
+
+    SET size_x 10
+    SET size_y 10
+
+    AT display_y_loop
+        SET display_x 0
+        MATH display_y add {{display_y}} 1
+
+        AT display_x_loop
+
+            IF {{display_x}} == {{x}} t player_check_y
+
+            OUT end=   
+
+            MATH display_x add {{display_x}} 1
+            IF {{display_x}} != {{size_x}} t display_x_loop
+            //OUT {{display_x}}
+            TO after_display_x_loop
+
+            AT player_check_y
+                IF {{display_y}} == {{y}} t draw_player
+                TO after_display_x_loop
+
+            AT draw_player
+                OUT end= @ 
+
+        AT after_display_x_loop
+
+        OUT 
+            
+        IF {{display_y}} != {{size_y}} t display_y_loop
+        TO after_display
+    
+
+//-----------\\
+
+
+AT main
+    OUT x: {{x}} y: {{y}}
+    CLEAR_TERM
+
+    TO display
+
+    OUT w: up s: down a: left d: right q: quit
+
+    AT main_loop
+        CLEAR_TERM
+        TO display
+        AT after_display
+        INPUT action Input: 
+        TO do_action
+        OUT x: {{x}} y: {{y}}
+
+        TO test_victory
+        TO main_loop
