@@ -1,5 +1,3 @@
-from pynput import keyboard
-
 from board import Board
 from player import Player
 from display import Display
@@ -23,15 +21,11 @@ class Game:
         self.multiplayer_game = False
         multiplayer_question = input("Do you want to play multiplayer? (not really working) (y/N): ")
         if multiplayer_question == "y":
-            self.multiplayer = Multiplayer(server="http://46.86.27.153", port=3000)
+            self.multiplayer = Multiplayer(server="http://localhost", port=3000)
             self.multiplayer.connect()
             self.multiplayer_game = True
 
         self.update()
-
-
-    def event(self, msg):
-        print(msg)
 
     def update(self):
         second_player_position = None
@@ -47,14 +41,6 @@ class Game:
         player_action = input("Action: ")
         self.actions(player_action)
         self.update()
-
-
-    def key_listener(self):
-        # listen for key presses
-        listener = keyboard.Listener(
-            on_press=self.on_press,
-            )
-        listener.start()
 
     def on_press(self, key):
         # await self.actions(key.char)
