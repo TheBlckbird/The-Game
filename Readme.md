@@ -1,7 +1,6 @@
 # The Game
 
-A small stupid "game" created in as many languages as possible:
-
+A small stupid "game" created in as many languages as possible:  
 
 - [ ] Shell script
 - [ ] Kotlin
@@ -17,7 +16,6 @@ A small stupid "game" created in as many languages as possible:
 - [ ] Go
 - [ ] Dart
 - [ ] Bash
-- [ ] Assembly
 - [x] Lua
 - [x] Python
 - [x] C
