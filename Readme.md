@@ -7,6 +7,7 @@ A small stupid "game" created in as many languages as possible:
 - [x] C
 - [x] RCLW
 - [x] Julia
+- [x] Go
 - [ ] Shell script
 - [ ] Kotlin
 - [ ] Rust
@@ -17,6 +18,5 @@ A small stupid "game" created in as many languages as possible:
 - [ ] PHP
 - [ ] Kotlin
 - [ ] Java
-- [ ] Go
 - [ ] Dart
 - [ ] Bash
