@@ -20,4 +20,3 @@ A small stupid "game" created in as many languages as possible:
 - [ ] Go
 - [ ] Dart
 - [ ] Bash
-- [ ] Objective-C
