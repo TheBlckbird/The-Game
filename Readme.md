@@ -20,3 +20,4 @@ A small stupid "game" created in as many languages as possible:
 - [ ] Java
 - [ ] Dart
 - [ ] Bash
+- [ ] Fortran
