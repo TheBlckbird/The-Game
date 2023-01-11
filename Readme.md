@@ -1,6 +1,6 @@
 # The Game
 
-A small stupid "game" created in as many languages as possible:  
+A small stupid "minigame" created in as many languages as possible:  
 
 - [x] Lua
 - [x] Python
