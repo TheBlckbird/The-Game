@@ -8,3 +8,4 @@ A small stupid "minigame" created in as many languages as possible:
 - [x] RCLW
 - [x] Julia
 - [x] Go
+- [x] Fortran
