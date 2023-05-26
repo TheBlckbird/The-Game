@@ -9,3 +9,7 @@ A small stupid "minigame" created in as many languages as possible:
 -   [Julia](/julia)
 -   [Go](/go)
 -   [Fortran](/fortran)
+
+## License
+
+This project is licensed under the [MIT License](/LICENSE).
